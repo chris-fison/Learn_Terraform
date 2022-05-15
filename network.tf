@@ -4,20 +4,20 @@
 
 
 
-#Create a VNET
-resource "azurerm_virtual_network" "learn-vnet" {
-  address_space       = ["10.0.0.0/16"]
-  location            = azurerm_resource_group.rg-ft-learn.location
-  name                = "${azurerm_resource_group.rg-ft-learn.name}-vnet"
-  resource_group_name = azurerm_resource_group.rg-ft-learn.name
+# #Create a VNET
+# resource "azurerm_virtual_network" "learn-vnet" {
+#   address_space       = ["10.0.0.0/16"]
+#   location            = azurerm_resource_group.rg-ft-learn.location
+#   name                = "${azurerm_resource_group.rg-ft-learn.name}-vnet"
+#   resource_group_name = azurerm_resource_group.rg-ft-learn.name
 
-}
+# }
 
 #Create a NSG
 resource "azurerm_network_security_group" "learn-nsg" {
-  location            = azurerm_resource_group.rg-ft-learn.location
-  name                = "${azurerm_resource_group.rg-ft-learn.name}-nsg"
-  resource_group_name = azurerm_resource_group.rg-ft-learn.name
+  location            = learn.location
+  name                = "learn-nsg"
+  resource_group_name = learn
 
   security_rule {
     access                     = "Allow"
@@ -45,4 +45,4 @@ resource "azurerm_network_security_group" "learn-nsg" {
     source_port_range = "*"
   }
 
-}
+ }
