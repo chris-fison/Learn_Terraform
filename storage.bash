@@ -1,6 +1,6 @@
 # terraform {
 #  backend "azurerm" {
-#     resource_group_name   = "learn"
+#     resource_group_name   = "learn-storage"
 #     storage_account_name  = "ftlearnstorage"
 #     container_name        = "ftlearncontainer"
 #     key                   = "learn.tfstate"
@@ -11,7 +11,7 @@
 # Ctrl+K+U - to uncomment
 
 #!/bin/bash
-RESOURCE_GROUP_NAME=learn
+RESOURCE_GROUP_NAME=learn-storage
 STORAGE_ACCOUNT_NAME=ftlearnstorage
 CONTAINER_NAME=ftlearncontainer
 # Create resource group
