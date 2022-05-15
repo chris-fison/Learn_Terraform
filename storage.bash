@@ -1,9 +1,9 @@
 # terraform {
 #  backend "azurerm" {
 #     resource_group_name   = "learn"
-#     storage_account_name  = "learn_storage"
-#     container_name        = "learn_container"
-#     key                   = "network.tfstate"
+#     storage_account_name  = "ftlearnstorage"
+#     container_name        = "ftlearncontainer"
+#     key                   = "learn.tfstate"
 # }
 # }
 
@@ -12,8 +12,8 @@
 
 #!/bin/bash
 RESOURCE_GROUP_NAME=learn
-STORAGE_ACCOUNT_NAME=learnstorage
-CONTAINER_NAME=learncontainer
+STORAGE_ACCOUNT_NAME=ftlearnstorage
+CONTAINER_NAME=ftlearncontainer
 # Create resource group
 az group create --name $RESOURCE_GROUP_NAME --location ukwest
 # Create storage account
