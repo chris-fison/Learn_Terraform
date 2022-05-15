@@ -20,7 +20,7 @@ resource "azurerm_network_security_group" "learn-nsg" {
   resource_group_name = azurerm_resource_group.rg-ft-learn.name
 
   security_rule {
-    access = "allow"
+    access = "Allow"
     description = "Allow SFTP"
     destination_address_prefix = "*"
     # destination_address_prefixes = [ "value" ]
