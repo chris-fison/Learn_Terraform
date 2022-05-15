@@ -6,15 +6,15 @@
 #Create a RG
 resource "azurerm_resource_group" "rg-ft-learn" {
   location = "ukwest"
-  name     = "rg-ft-learn"
+  name     = "learn"
 
 }
 
 #Create a VNET
 resource "azurerm_virtual_network" "fisontech" {
   address_space       = ["10.0.0.0/16"]
-  location            = "${azurerm_resource_group.rg-ft-learn.location}"
+  location            = azurerm_resource_group.rg-ft-learn.location
   name                = "${azurerm_resource_group.rg-ft-learn.name}-vnet"
-  resource_group_name = "${azurerm_resource_group.rg-ft-learn.name}"
-  
+  resource_group_name = azurerm_resource_group.rg-ft-learn.name
+
 }
