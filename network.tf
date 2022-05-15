@@ -2,7 +2,12 @@
 # Ctrl+K+U - to uncomment
 # Ctrl_space - show related items
 
+#Create a RG
+resource "azurerm_resource_group" "rg-ft-learn" {
+  location = "ukwest"
+  name     = "learn"
 
+}
 
 # #Create a VNET
 # resource "azurerm_virtual_network" "learn-vnet" {
