@@ -1,6 +1,6 @@
 terraform {
  backend "azurerm" {
-    resource_group_name   = "learn"
+    resource_group_name   = "learn-storage"
     storage_account_name  = "ftlearnstorage"
     container_name        = "ftlearncontainer"
     key                   = "learn.tfstate"
