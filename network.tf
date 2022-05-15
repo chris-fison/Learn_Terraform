@@ -3,9 +3,9 @@
 # Ctrl_space - show related items
 
 #Create a RG
-resource "azurerm_resource_group" "rg-ft-learn" {
+resource "azurerm_resource_group" "rg-ft-learn-network" {
   location = "ukwest"
-  name     = "learn"
+  name     = "learn-network"
 
 }
 
@@ -20,9 +20,9 @@ resource "azurerm_resource_group" "rg-ft-learn" {
 
 #Create a NSG
 resource "azurerm_network_security_group" "learn-nsg" {
-  location            = azurerm_resource_group.rg-ft-learn.location
-  name                = "${azurerm_resource_group.rg-ft-learn.name}-nsg"
-  resource_group_name = azurerm_resource_group.rg-ft-learn.name
+  location            = azurerm_resource_group.rg-ft-learn-network.location
+  name                = "${azurerm_resource_group.rg-ft-learn-network.name}-nsg"
+  resource_group_name = azurerm_resource_group.rg-ft-learn-network.name
 
   security_rule {
     access                     = "Allow"
