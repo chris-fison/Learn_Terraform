@@ -48,7 +48,7 @@ resource "azurerm_network_security_group" "learn-nsg" {
     destination_port_range = "20-21"
     direction             = "Inbound"
     name                  = "Allow-Inbound-FTP"
-    priority              = 100
+    priority              = 99
     protocol              = "Tcp"
     source_address_prefix = "Internet"
     source_port_range = "*"
