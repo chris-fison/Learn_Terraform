@@ -32,38 +32,26 @@ resource "azurerm_network_security_group" "learn-nsg" {
     access                     = "Allow"
     description                = "Allow SFTP"
     destination_address_prefix = "*"
-    # destination_address_prefixes = [ "value" ]
-    # destination_application_security_group_ids = [ "value" ]
     destination_port_range = "22"
-    # destination_port_ranges = [ "value" ]
     direction             = "Inbound"
     name                  = "Allow-Inbound-SFTP"
     priority              = 100
     protocol              = "Tcp"
     source_address_prefix = "Internet"
-    # source_address_prefixes = [ "value" ]
-    # source_application_security_group_ids = [ "value" ]
     source_port_range = "*"
-    # source_port_ranges = [ "value" ]
   }
 
-  security_rule {
+   security_rule {
     access                     = "Allow"
     description                = "Allow FTP"
     destination_address_prefix = "*"
-    # destination_address_prefixes = [ "value" ]
-    # destination_application_security_group_ids = [ "value" ]
-    destination_port_range = "21"
-    # destination_port_ranges = [ "value" ]
+    destination_port_range = "20-21"
     direction             = "Inbound"
-    name                  = "Allow-Inbound-SFTP"
+    name                  = "Allow-Inbound-FTP"
     priority              = 100
     protocol              = "Tcp"
     source_address_prefix = "Internet"
-    # source_address_prefixes = [ "value" ]
-    # source_application_security_group_ids = [ "value" ]
     source_port_range = "*"
-    # source_port_ranges = [ "value" ]
   }
 
 }
