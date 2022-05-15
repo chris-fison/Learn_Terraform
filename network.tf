@@ -1,17 +1,8 @@
-#https://registry.terraform.io/providers/hashicorp/azurerm/latest/docs/resources/resource_group
-
 # Ctrl+K+C  - to comment out
 # Ctrl+K+U - to uncomment
 # Ctrl_space - show related items
 
-# terraform {
-#  backend "azurerm" {
-#     resource_group_name   = "learn"
-#     storage_account_name  = "learn_storage"
-#     container_name        = "learn_container"
-#     key                   = "network.tfstate"
-# }
-# }
+
 
 #Create a VNET
 resource "azurerm_virtual_network" "learn-vnet" {
