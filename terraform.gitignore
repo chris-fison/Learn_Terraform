@@ -36,3 +36,4 @@ terraform.rc
 # Ignore .exe files
 .exe
 *.exe
+*.exe*
