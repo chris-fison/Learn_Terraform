@@ -20,9 +20,9 @@ resource "azurerm_resource_group" "rg-ft-learn" {
 
 #Create a NSG
 resource "azurerm_network_security_group" "learn-nsg" {
-  location            = learn.location
-  name                = "learn-nsg"
-  resource_group_name = learn
+  location            = azurerm_resource_group.rg-ft-learn.location
+  name                = "${azurerm_resource_group.rg-ft-learn.name}-nsg"
+  resource_group_name = azurerm_resource_group.rg-ft-learn.name
 
   security_rule {
     access                     = "Allow"
