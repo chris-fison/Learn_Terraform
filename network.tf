@@ -2,6 +2,7 @@
 
 # Ctrl+K+C  - to comment out
 # Ctrl+K+U - to uncomment
+# Ctrl_space - show related items
 
 #Create a VNET
 resource "azurerm_virtual_network" "learn-vnet" {
@@ -17,4 +18,23 @@ resource "azurerm_network_security_group" "learn-nsg" {
   location            = azurerm_resource_group.rg-ft-learn.location
   name                = "${azurerm_resource_group.rg-ft-learn.name}-nsg"
   resource_group_name = azurerm_resource_group.rg-ft-learn.name
+
+  security_rule = [ {
+    access = "allow"
+    description = "Allow SFTP"
+    destination_address_prefix = "*"
+    # destination_address_prefixes = [ "value" ]
+    # destination_application_security_group_ids = [ "value" ]
+    destination_port_range = "22"
+    # destination_port_ranges = [ "value" ]
+    direction = "Inbound"
+    name = "Allow-Inbound-SFTP"
+    priority = 100
+    protocol = "Tcp"
+    source_address_prefix = "Internet"
+    # source_address_prefixes = [ "value" ]
+    # source_application_security_group_ids = [ "value" ]
+    source_port_range = "*"
+    # source_port_ranges = [ "value" ]
+  } ]
 }
